@@ -1,0 +1,1 @@
+web: node send4.js && apns2.js
