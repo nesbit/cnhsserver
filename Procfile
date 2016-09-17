@@ -1,1 +1,2 @@
-web: node send4.js && apns2.js
+web: node uploaddroid.js
+worker: node send4.js
