@@ -6,16 +6,16 @@ process.env.PORT = 8081;
 var port = process.env.PORT || 8081;
 //  https://gcmforcnhsapp-armadillodude.c9users.io:8081/hola
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'armadillodude',
-  password : '',
-  database : 'deviceid'
+  host     : 'sp6xl8zoyvbumaa2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user     : 'oi7hss5h1e0qnfb7',
+  password : 'hpsj2fsktv68mi1d',
+  database : 'j2rymydc2j3ul9jp'
 });
 var connection2 = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'armadillodude',
-  password : '',
-  database : 'deviceid'
+  host     : 'sp6xl8zoyvbumaa2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user     : 'oi7hss5h1e0qnfb7',
+  password : 'hpsj2fsktv68mi1d',
+  database : 'j2rymydc2j3ul9jp'
 });
 
 app.get('/:query', function(req, res) {
