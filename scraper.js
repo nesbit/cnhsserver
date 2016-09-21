@@ -2,10 +2,10 @@ var request = require("request");
 var parser = require('xml2json');
 var express = require('express');
 var app = express();
+var port = process.env.PORT || 8080;
 
-
-app.listen(8080);
-console.log('Server started! At http://localhost: 8080');
+app.listen(port);
+console.log('Server started! At http://localhost: ' + port);
 
 
 request({
