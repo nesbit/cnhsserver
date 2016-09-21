@@ -18,7 +18,7 @@ var connection2 = mysql.createConnection({
   database : 'j2rymydc2j3ul9jp'
 });
 
-app.get('/:query', function(req, res) {
+app.get('/android/:query', function(req, res) {
   console.log(req.params.query);
  // .."INSERT INTO `registrationID` (`id`) VALUES ('" + req.params.query +"')"
   
