@@ -2,8 +2,8 @@ var express = require('express');
 var app = express();
 var mysql = require('mysql');
 //var port = process.env.PORT || 8081;
-process.env.PORT = 8081;
-var port = process.env.PORT || 8081;
+//process.env.PORT = 8081;
+var port = process.env.PORT || 8080;
 //  https://gcmforcnhsapp-armadillodude.c9users.io:8081/hola
 var connection = mysql.createConnection({
   host     : 'sp6xl8zoyvbumaa2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
