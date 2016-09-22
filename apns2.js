@@ -98,7 +98,7 @@ function pushNotificationToMany() {
     var note = new apn.notification();
     note.setAlertText(val.gsx$description.$t);
     note.badge = 1;
-    //note.sound = "ping.aiff";
+    note.sound = "ping.aiff";
 
     service.pushNotification(note, tokens);
 }
