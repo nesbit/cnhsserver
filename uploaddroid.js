@@ -5,6 +5,7 @@ var mysql = require('mysql');
 //process.env.PORT = 8081;
 var port = process.env.PORT || 8080;
 //  https://gcmforcnhsapp-armadillodude.c9users.io:8081/hola
+app.listen(port);
 var connection = mysql.createConnection({
   host     : 'sp6xl8zoyvbumaa2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
   user     : 'oi7hss5h1e0qnfb7',
