@@ -44,7 +44,10 @@ request({
     for(var i in contents.feed.entry) {
         var val = contents.feed.entry[i];
         var date = moment(val.gsx$timetosendnotification.$t, "MM-DD-YYYY HH:mm:ss");
-        var now = moment().tz("America/Los_Angeles").format("MM-DD-YYYY HH:mm:ss");
+        //var now = moment().tz("America/Los_Angeles").format("MM-DD-YYYY HH:mm:ss");
+        //CHANGED
+        var now = moment().format("MM-DD-YYYY HH:mm:ss");
+        //END CHANGED
         var diffe = date.diff(now, 'minutes');
         console.log(diffe);
       // =================
