@@ -5,8 +5,10 @@ var mysql = require('mysql');
 //process.env.PORT = 8081;
 var port = process.env.PORT || 8080;
 //  https://gcmforcnhsapp-armadillodude.c9users.io:8081/hola
-app.listen(8081);
-var connection = mysql.createConnection({
+//app.listen(8081);
+
+app.get('/android/:query', function(req, res) {
+  var connection = mysql.createConnection({
   host     : 'sp6xl8zoyvbumaa2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
   user     : 'oi7hss5h1e0qnfb7',
   password : 'hpsj2fsktv68mi1d',
@@ -18,8 +20,6 @@ var connection2 = mysql.createConnection({
   password : 'hpsj2fsktv68mi1d',
   database : 'j2rymydc2j3ul9jp'
 });
-
-app.get('/android/:query', function(req, res) {
   console.log(req.params.query);
  // .."INSERT INTO `registrationID` (`id`) VALUES ('" + req.params.query +"')"
   
@@ -68,7 +68,7 @@ console.log(rows1);
     console.log('Error while performing Query.');
   } 
   });
-
+});
   
   /*
       $alreadyExists = mysqli_query($con,"SELECT id from `registrationID` WHERE id = '$title'");
@@ -81,5 +81,5 @@ console.log(rows1);
         echo "error";
     }
   */
-});
+
 //app.listen(port);
