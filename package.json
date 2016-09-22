@@ -17,6 +17,6 @@
     "node-cron": "",
     "moment-timezone": "0.5.5",
     "xml2json": "",
-    "node-apn": ""
+    "apn": "1.7.8"
   }
 }
