@@ -11,13 +11,11 @@ var contents;
 var idFor = "";
 var tokens = [];
 
-process.env.TZ = "America/Los_Angeles";
-
-var connection = mysql.createConnection({
-  host     : 'sp6xl8zoyvbumaa2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-  user     : 'oi7hss5h1e0qnfb7',
-  password : 'hpsj2fsktv68mi1d',
-  database : 'j2rymydc2j3ul9jp'
+var mysqlConnection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'armadillodude',
+  password : '',
+  database : 'deviceid'
 });
 
 
@@ -44,10 +42,7 @@ request({
     for(var i in contents.feed.entry) {
         var val = contents.feed.entry[i];
         var date = moment(val.gsx$timetosendnotification.$t, "MM-DD-YYYY HH:mm:ss");
-        //var now = moment().tz("America/Los_Angeles").format("MM-DD-YYYY HH:mm:ss");
-        //CHANGED
-        var now = moment().format("MM-DD-YYYY HH:mm:ss");
-        //END CHANGED
+        var now = moment().tz("America/Los_Angeles").format("MM-DD-YYYY HH:mm:ss");
         var diffe = date.diff(now, 'minutes');
         console.log(diffe);
       // =================
@@ -58,7 +53,7 @@ request({
         
             
 // ===================
-            connection.query("SELECT * from `registrationIDIOS`", function(err, rows, fields) {
+            mysqlConnection.query("SELECT * from `registrationIDIOS`", function(err, rows, fields) {
                 tokens = [];
                 for (var i in rows) {
                 tokens.push(rows[i].id);
