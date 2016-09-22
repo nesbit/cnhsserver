@@ -11,6 +11,8 @@ var contents;
 var idFor = "";
 var tokens = [];
 
+process.env.TZ = "America/Los_Angeles";
+
 var connection = mysql.createConnection({
   host     : 'sp6xl8zoyvbumaa2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
   user     : 'oi7hss5h1e0qnfb7',
