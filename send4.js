@@ -39,12 +39,10 @@ request({
     console.log("New Text!!!");
     for(var i in contents.feed.entry) {
         var val = contents.feed.entry[i];
-        //var date = moment(val.gsx$timetosendnotification.$t, "MM-DD-YYYY HH:mm:ss");
-        //var now = moment().tz("America/Los_Angeles").format("MM-DD-YYYY HH:mm:ss");
+        var date = moment(val.gsx$timetosendnotification.$t, "MM-DD-YYYY HH:mm:ss");
+        var now = moment().tz("America/Los_Angeles").format("MM-DD-YYYY HH:mm:ss");
         //CHANGED
-        var date = moment(val.gsx$timetosendnotification.$t, "MM-DD-YYYY HH:mm:ss").tz("America/Los_Angeles");
-        var now = moment().tz("UTC").format("MM-DD-YYYY HH:mm:ss");
-        date = moment(date).tz("UTC");
+
         //END CHANGED
         var diffe = date.diff(now, 'minutes');
         console.log(diffe);
