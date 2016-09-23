@@ -38,13 +38,13 @@ request({
 }, function(error, response, body) {
   //console.log(body);
     contents = JSON.parse(body);
-    console.log("New Text!!!");
+    //console.log("New Text!!!");
     for(var i in contents.feed.entry) {
         var val = contents.feed.entry[i];
         var date = moment(val.gsx$timetosendnotification.$t, "MM-DD-YYYY HH:mm:ss");
         var now = moment().tz("America/Los_Angeles").format("MM-DD-YYYY HH:mm:ss");
         var diffe = date.diff(now, 'minutes');
-        console.log(diffe);
+        console.log("IOS" + +diffe);
       // =================
         if (diffe == 0) {
             console.log("Currently Sending!!!!");
@@ -96,7 +96,7 @@ service.on("socketError", console.error);
 function pushNotificationToMany() {
     console.log("Sending the same notification each of the devices with one call to pushNotification.");
     var note = new apn.notification();
-    note.setAlertText(val.gsx$description.$t);
+    note.setAlertText(val.gsx$alert.$t);
     note.badge = 1;
     note.sound = "ping.aiff";
 
