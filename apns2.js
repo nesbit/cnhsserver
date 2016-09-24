@@ -47,7 +47,7 @@ request({
         console.log("IOS" + +diffe);
       // =================
         if (diffe == 0) {
-            console.log("Currently Sending!!!!");
+            console.log("IOS: Currently Sending!!!!");
 
 
         
@@ -59,34 +59,34 @@ request({
                 tokens.push(rows[i].id);
                 }
 
-                console.log("array updated");
+                console.log("IOS: array updated");
                 if (!err) {
-                console.log('No err: ');
+                console.log('IOS: No err: ');
 // =======================
 
 var service = new apn.connection({ production: true });
 
 service.on("connected", function() {
-    console.log("Connected");
+    console.log("IOS: Connected");
 });
 
 service.on("transmitted", function(notification, device) {
-    console.log("Notification transmitted to:" + device.token.toString("hex"));
+    console.log("IOS: Notification transmitted to:" + device.token.toString("hex"));
 });
 
 service.on("transmissionError", function(errCode, notification, device) {
-    console.error("Notification caused error: " + errCode + " for device ", device, notification);
+    console.error("IOS: Notification caused error: " + errCode + " for device ", device, notification);
     if (errCode === 8) {
-        console.log("A error code of 8 indicates that the device token is invalid. This could be for a number of reasons - are you using the correct environment? i.e. Production vs. Sandbox");
+        console.log("IOS: A error code of 8 indicates that the device token is invalid. This could be for a number of reasons - are you using the correct environment? i.e. Production vs. Sandbox");
     }
 });
 
 service.on("timeout", function () {
-    console.log("Connection Timeout");
+    console.log("IOS: Connection Timeout");
 });
 
 service.on("disconnected", function() {
-    console.log("Disconnected from APNS");
+    console.log("IOS: Disconnected from APNS");
 });
 
 service.on("socketError", console.error);
@@ -94,7 +94,7 @@ service.on("socketError", console.error);
 
 // If you plan on sending identical paylods to many devices you can do something like this.
 function pushNotificationToMany() {
-    console.log("Sending the same notification each of the devices with one call to pushNotification.");
+    console.log("IOS: Sending the same notification each of the devices with one call to pushNotification.");
     var note = new apn.notification();
     note.setAlertText(val.gsx$alert.$t);
     note.badge = 1;
@@ -107,12 +107,12 @@ pushNotificationToMany();
   
 // =======================  
             } else {
-                console.log('Error while performing Query.' + err);
+                console.log('IOS: Error while performing Query.' + err);
             } 
             });
       
         } else {
-            console.log("Response" + response.statusCode);
+            console.log("IOS: Response" + response.statusCode);
         }
     }
     });
