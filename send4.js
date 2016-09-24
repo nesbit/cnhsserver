@@ -74,7 +74,7 @@ request({
                 arrReg.push(rows[i].id);
                 }
 
-                console.log("array updated");
+                console.log("Android: array updated");
                 if (!err) {
                 console.log('Android: No err: ');
 // =======================
@@ -96,7 +96,7 @@ request({
       */
                 var sender = new gcm.Sender('AIzaSyA3VVsV4HxiuLaRcDOvXVKqRWZXPeARi8U');
                 var regTokens = arrReg;
-                console.log("reg "+arrReg);
+                console.log("Android: reg "+arrReg);
         //var regTokens = ['cZcd5OfAU6A:APA91bGiCCD1EToCsgo3BYa6SNRPMKNhdmlt3DMbHuouAbTjxLB-4t1l0gffDt9sHIPIaRTJhYJt68tPRRCTkfwC8OqQCMvuRTxMsFmxJQQRtWxfH9P9BTVmSnaSdCk07COxFA8l-s25'];
                 
                 
@@ -104,7 +104,7 @@ request({
                     if(err) 
                         console.error("Android: sender error: "+err);
                     else
-                        console.log(response);
+                        console.log("Android: \n " + response);
                 });
   
 // =======================  
