@@ -38,7 +38,7 @@ request({
 }, function(error, response, body) {
   //console.log(body);
     contents = JSON.parse(body);
-    console.log("New Text!!!");
+    console.log("Android: New Text!!!");
     for(var i in contents.feed.entry) {
         var val = contents.feed.entry[i];
         var date = moment(val.gsx$timetosendnotification.$t, "MM-DD-YYYY HH:mm:ss");
@@ -47,10 +47,10 @@ request({
         var now = moment().format("MM-DD-YYYY HH:mm:ss");
         //END CHANGED
         var diffe = date.diff(now, 'minutes');
-        console.log(diffe);
+        console.log("Android: " + diffe);
       // =================
         if (diffe == 0) {
-            console.log("Currently Sending!!!!");
+            console.log("Android: Currently Sending!!!!");
 
 
         var message = new gcm.Message({
@@ -66,7 +66,7 @@ request({
                         sound:"default"
                     }
                 });
-            console.log("Sending " + val.gsx$alert.$t)
+            console.log("Android: Sending " + val.gsx$alert.$t)
 
             connection.query("SELECT * from `registrationID`", function(err, rows, fields) {
                 arrReg = [];
@@ -76,7 +76,7 @@ request({
 
                 console.log("array updated");
                 if (!err) {
-                console.log('No err: ');
+                console.log('Android: No err: ');
 // =======================
   /*
                 var message = new gcm.Message({
@@ -102,19 +102,19 @@ request({
                 
                 sender.send(message, { registrationTokens: regTokens }, function (err, response) {
                     if(err) 
-                        console.error("sender error: "+err);
+                        console.error("Android: sender error: "+err);
                     else
                         console.log(response);
                 });
   
 // =======================  
             } else {
-                console.log('Error while performing Query.' + err);
+                console.log('Android: Error while performing Query.' + err);
             } 
             });
       
         } else {
-            console.log("Response" + response.statusCode);
+            console.log("Android: Response" + response.statusCode);
         }
     }
     });
