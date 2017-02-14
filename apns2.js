@@ -96,9 +96,10 @@ service.on("socketError", console.error);
 function pushNotificationToMany() {
     console.log("IOS: Sending the same notification each of the devices with one call to pushNotification.");
     var note = new apn.notification();
-    note.setAlertText(val.gsx$alert.$t);
+    note.body = val.gsx$alert.$t;
+  //note.setAlertText(val.gsx$alert.$t);
     note.badge = 1;
-    note.sound = "ping.aiff";
+    note.sound = "chime.caf";
 
     service.pushNotification(note, tokens);
 }
